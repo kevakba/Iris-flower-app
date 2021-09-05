@@ -29,10 +29,10 @@ def predict():
                 flower_dim.append(float(i))
             except:
                 return "Please enter the valid dimensions"
-	
+
 
         iris_model = load('model2/iris_model.pkl')
-    
+
         test_inp = np.array(flower_dim).reshape(1, 4)
         class_predicted = int(iris_model.predict(test_inp)[0])
         if class_predicted==0:
@@ -41,7 +41,11 @@ def predict():
             name = 'Versicolor'
         else:
             name = 'Virginica'
-	
+
         output_pic = "static/" + name + '.jpeg'
 
         return render_template('out_pic.html', href=output_pic)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
