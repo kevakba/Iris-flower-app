@@ -8,7 +8,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the model from the file
-iris_model = joblib.load('model2/iris_model.pkl')
+#iris_model = joblib.load('model2/iris_model.pkl')
 
 @app.route('/', methods=['GET','POST'])
 def predict():
